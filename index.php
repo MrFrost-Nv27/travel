@@ -2,6 +2,18 @@
 if (!isset($_SESSION['login'])) {
     echo "<script>window.location='" . base_url("login") . "';</script>";
 }
+
+$crud = match (explode("/", $_SERVER['REQUEST_URI'])[2]) {
+    "create", "read", "update", "delete" => true,
+    default => false,
+};
+if ($crud) {
+    include_once "model/" . explode("/", $_SERVER['REQUEST_URI'])[1] . ".php";
+    $model = new Model();
+    $model->{explode("/", $_SERVER['REQUEST_URI'])[2]}();
+    die;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

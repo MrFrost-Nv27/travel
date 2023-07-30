@@ -1,8 +1,6 @@
 <?php require_once "../config/database.php";
 if (isset($_SESSION['login'])) {
     echo "<script>window.location='" . base_url() . "';</script>";
-} else {
-    echo "<script>window.location='" . base_url("login") . "';</script>";
 }
 ?>
 <!doctype html>
