@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Jul 2023 pada 15.37
+-- Waktu pembuatan: 30 Jul 2023 pada 18.01
 -- Versi server: 10.4.27-MariaDB
 -- Versi PHP: 8.2.0
 
@@ -46,6 +46,7 @@ CREATE TABLE `tb_pengguna` (
   `id` int(10) UNSIGNED NOT NULL,
   `username` varchar(64) NOT NULL,
   `pasword` varchar(255) NOT NULL,
+  `nama` varchar(64) NOT NULL,
   `kontak` varchar(16) NOT NULL,
   `id_peran` int(10) UNSIGNED NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -54,9 +55,9 @@ CREATE TABLE `tb_pengguna` (
 -- Dumping data untuk tabel `tb_pengguna`
 --
 
-INSERT INTO `tb_pengguna` (`id`, `username`, `pasword`, `kontak`, `id_peran`) VALUES
-(1, 'munibi', '*4ACFE3202A5FF5CF467898FC58AAB1D615029441', '081234567890', 1),
-(2, 'mumun', '*D5D9F81F5542DE067FFF5FF7A4CA4BDD322C578F', '0822141221', 2);
+INSERT INTO `tb_pengguna` (`id`, `username`, `pasword`, `nama`, `kontak`, `id_peran`) VALUES
+(1, 'munibi', '$2y$10$3veN9IoVGqfn0bObuIoEe.zl82dEjaZCjki6/.F78V1NjB1CxMatu', 'Ahmad Munibi', '081234567890', 1),
+(2, 'mumun', '$2y$10$D.ka1ZWM.fWgkj/T0mdq1uAv7wBERaAUELYG3ATo.J48NrrjeSOom', 'Alex Munibi', '0822141221', 2);
 
 -- --------------------------------------------------------
 
@@ -178,7 +179,7 @@ ALTER TABLE `tb_jadwal`
 -- AUTO_INCREMENT untuk tabel `tb_pengguna`
 --
 ALTER TABLE `tb_pengguna`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_peran`
